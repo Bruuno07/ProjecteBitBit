@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Versión del servidor:         10.4.14-MariaDB - mariadb.org binary distribution
+-- Versión del servidor:         10.4.13-MariaDB - mariadb.org binary distribution
 -- SO del servidor:              Win64
--- HeidiSQL Versión:             11.1.0.6116
+-- HeidiSQL Versión:             11.2.0.6213
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -113,10 +113,11 @@ CREATE TABLE IF NOT EXISTS `login_attempts` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla noticies.login_attempts: ~3 rows (aproximadamente)
+-- Volcando datos para la tabla noticies.login_attempts: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `login_attempts` DISABLE KEYS */;
 INSERT INTO `login_attempts` (`id`, `ip_address`, `login`, `time`) VALUES
-	(8, '::1', 'aaaaaaaaa', 1620718440);
+	(17, '::1', 'Tecnic', 1620806270),
+	(18, '::1', 'tecnico', 1620806276);
 /*!40000 ALTER TABLE `login_attempts` ENABLE KEYS */;
 
 -- Volcando estructura para tabla noticies.logs
@@ -256,7 +257,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `first_name` varchar(50) DEFAULT NULL,
   `last_name` varchar(50) DEFAULT NULL,
   `company` varchar(100) DEFAULT NULL,
-  `phone` varchar(20) DEFAULT NULL,
+  `phone` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uc_email` (`email`),
   UNIQUE KEY `uc_activation_selector` (`activation_selector`),
@@ -264,11 +265,13 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `uc_remember_selector` (`remember_selector`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla noticies.users: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla noticies.users: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `email`, `activation_selector`, `activation_code`, `forgotten_password_selector`, `forgotten_password_code`, `forgotten_password_time`, `remember_selector`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-	(1, '127.0.0.1', 'administrator', '$2y$10$.gQBTIc.W1pmHeSVzYB6pudj2aO.V6bHmFGmIL1ngdxoMLokCUhLC', 'admin@admin.com', NULL, '', NULL, NULL, NULL, NULL, NULL, 1268889823, 1620718455, 1, 'Admin', 'istrator', 'ADMIN', '0'),
-	(8, '::1', 'Darius', '$2y$10$aBb9hSJgv2OuLU8sNQqbP.r.Ue1RMDzsFQ79x59i8i.aBRCzcdTN6', 'dariuscocoara2@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1620338642, NULL, 1, 'Darius', 'Cocoara', NULL, '+34642717826');
+	(1, '127.0.0.1', 'administrator', '$2y$10$.gQBTIc.W1pmHeSVzYB6pudj2aO.V6bHmFGmIL1ngdxoMLokCUhLC', 'admin@admin.com', NULL, '', NULL, NULL, NULL, NULL, NULL, 1268889823, 1620819515, 1, 'Admin', 'istrator', 'ADMIN', 0),
+	(28, '', 'Gestor', '$2y$10$IPCPdTC4DONvezgCxL42CuCES40Je9aEql0l8t/L7mGydA5NI5pxe', 'gestor@gestor.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 1620819541, 1, 'gestor', 'gestor', NULL, 611111111),
+	(29, '', 'Trabajador', '$2y$10$2NvNaYNNpurimaScEtw/tuvnKoensNWS4Yd0ETYiAWfrvQiQ22PD2', 'trabajador@trabajador.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 1620817586, 1, 'Trabajador', 'trabajador', NULL, 611111111),
+	(31, '', 'Client', '$2y$10$ULNVB5imJXDBU0n2KVkqmOBE9xC2UNzyUolZquDRsTz2TYUJnxqa6', 'aaa@uuu.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 1620820551, 1, 'Client', 'client', NULL, 611111111);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 -- Volcando estructura para tabla noticies.users_groups
@@ -285,14 +288,16 @@ CREATE TABLE IF NOT EXISTS `users_groups` (
   CONSTRAINT `fk_users_groups_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla noticies.users_groups: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla noticies.users_groups: ~6 rows (aproximadamente)
 /*!40000 ALTER TABLE `users_groups` DISABLE KEYS */;
 INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 	(1, 1, 1),
 	(2, 1, 2),
 	(4, 1, 3),
 	(3, 1, 4),
-	(7, 8, 3);
+	(16, 28, 4),
+	(15, 29, 3),
+	(14, 31, 2);
 /*!40000 ALTER TABLE `users_groups` ENABLE KEYS */;
 
 -- Volcando estructura para tabla noticies.usuario_incidencia
@@ -310,6 +315,6 @@ CREATE TABLE IF NOT EXISTS `usuario_incidencia` (
 /*!40000 ALTER TABLE `usuario_incidencia` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
