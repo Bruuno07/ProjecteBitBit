@@ -41,7 +41,7 @@
             <a type="button" href="<?php echo site_url('') ?>" class="btn btn-outline-secondary mr-3">Inicio</a>
           </li>
         </ul>
-        <a class="text text-white mr-5" href="<?php echo site_url('passwdchange') ?>" >Cambiar contraseña</a>
+        <a class="text text-white mr-5" href="<?php echo site_url('passwdchange') ?>" ><img src="<?php echo base_url("assets/img/config.png") ?>" />Configuración de la cuenta</a>
         <span class="text text-white mr-5"><img src="<?php echo base_url("assets/img/user.png") ?>" /> <?php echo $user->first_name; ?> </span>
         <a type="button" href="<?php echo site_url('logout') ?>" class="btn btn-danger mr-3 ">Cerrar sesión</a>
 

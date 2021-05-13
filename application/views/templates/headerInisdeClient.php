@@ -44,9 +44,14 @@
           <li class="nav-item ">
             <a type="button" href="<?php echo site_url('nuevareparacion') ?>" class="btn btn-outline-secondary mr-3">Nueva reparación</a>
           </li>
+
+          <li class="nav-item ">
+            <a type="button" href="<?php echo site_url('misreparaciones') ?>" class="btn btn-outline-secondary mr-3">Mis reparaciones</a>
+          </li>
+
         </ul>
-        <a class="text text-white mr-5" href="<?php echo site_url('passwdchange') ?>" >Cambiar contraseña</a>
-        <span class="text text-white mr-5"><img src="<?php echo base_url("assets/img/user.png") ?>" /><?php echo $user->first_name; ?> </span>
+        <a class="text text-white mr-5" href="<?php echo site_url('passwdchange') ?>" ><img src="<?php echo base_url("assets/img/config.png") ?>" />Configuración de la cuenta</a>
+        <span class="text text-white mr-5"> <img src="<?php echo base_url("assets/img/user.png") ?>" /><?php echo $user->first_name; ?> </span>
         <a type="button" href="<?php echo site_url('logout') ?>" class="btn btn-danger mr-3 ">Cerrar sesión</a>
 
       </div>

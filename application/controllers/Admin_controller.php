@@ -56,7 +56,8 @@ class Admin_controller extends CI_Controller {
 	public function user_groups()
     {
         $crud = new grocery_CRUD();
-		$crud->columns('user_id','group_id');
+        $crud->set_relation('user_id','users','username');
+        $crud->set_relation('group_id','groups','name');
 		$crud->set_table('users_groups');
         $output = $crud->render();
  
@@ -118,7 +119,6 @@ class Admin_controller extends CI_Controller {
         $this->load->view('pages/changePassword.php');		
     }
 
-    
 
 
 

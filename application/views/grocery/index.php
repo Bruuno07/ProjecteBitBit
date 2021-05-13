@@ -11,13 +11,19 @@ foreach($css_files as $file): ?>
 <style>
     .mt100{
         margin-top:150px;
-        margin-bottom:150px;
     }
+
+    .mt50{
+        margin-top:50px;
+        margin-bottom:50px;
+
+    }
+    
 </style>
 
 <div class="container-fluid mt100">    
 <?php 
 echo $output; 
 ?>
-<a  href="<?php echo base_url(''); ?>"><button class="btn btn-primary">Volver al menú principal</button></a>
+<a  href="<?php echo base_url(''); ?>"><button class="btn btn-primary mt50">Volver al menú principal</button></a>
 </div>

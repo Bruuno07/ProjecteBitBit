@@ -64,8 +64,7 @@ class Home extends CI_Controller
 			$this->load->view('pages/TecnicHome');
 		}
 		else if($this->ion_auth->in_group($groupGestor)) {
-			$this->load->view('templates/headerInisdeGestor', $data);
-			$this->load->view('pages/GestorHome');
+			redirect('todasLasIncidencias');
 		}
 	
 		$this->load->view('templates/footer');

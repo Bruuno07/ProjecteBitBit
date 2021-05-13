@@ -71,11 +71,29 @@ $route['mail'] = 'Admin_controller/mail';
 $route['material'] = 'Admin_controller/material'; 
 
 $route['passwdchange'] = 'UpdatePassword_controller/index'; 
-$route['nuevareparacion'] = 'Nuevareparacion_controller/index'; 
 $route['updatePassword'] = 'UpdatePassword_controller/updatePassword'; 
 
 
+$route['nuevareparacion'] = 'Nuevareparacion_controller/index'; 
+$route['misreparaciones'] = 'Reparaciones_controller/index'; 
+
+
+
+
 $route['todasLasIncidencias'] = 'Gestor_controller/todasLasIncidencias'; 
+$route['todasLasIncidencias/add'] = 'Gestor_controller/todasLasIncidencias/add';
+$route['todasLasIncidencias/insert'] = 'Gestor_controller/todasLasIncidencias/insert';
+$route['todasLasIncidencias/insert_validation'] = 'Gestor_controller/todasLasIncidencias/insert_validation';
+$route['todasLasIncidencias/success/:num'] = 'Gestor_controller/todasLasIncidencias/success';
+$route['todasLasIncidencias/delete/:num'] = 'Gestor_controller/todasLasIncidencias/delete';
+$route['todasLasIncidencias/edit/:num'] = 'Gestor_controller/todasLasIncidencias/edit';
+$route['todasLasIncidencias/clone/:num'] = 'Gestor_controller/todasLasIncidencias/clone';
+$route['todasLasIncidencias/update_validation/:num'] = 'Gestor_controller/todasLasIncidencias/update_validation';
+$route['todasLasIncidencias/update/:num'] = 'Gestor_controller/todasLasIncidencias/update';
+$route['todasLasIncidencias/ajax_list_info'] = 'Gestor_controller/todasLasIncidencias/ajax_list_info';
+$route['todasLasIncidencias/ajax_list'] = 'Gestor_controller/todasLasIncidencias/ajax_list';
+$route['todasLasIncidencias/read/:num'] = 'Gestor_controller/todasLasIncidencias/read';
+$route['todasLasIncidencias/export'] = 'Gestor_controller/todasLasIncidencias/export';
 
 
 

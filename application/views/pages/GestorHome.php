@@ -49,7 +49,7 @@
 
 <section>
 
-    <div class="container-fluid margetop">
+    <!-- <div class="container-fluid margetop">
         <div class="row d-flex justify-content-center">
             <?php for ($i = 0; $i < 3; $i++) { ?>
                 <div class="card text-center">
@@ -73,5 +73,5 @@
             }
             ?>
         </div>
-    </div>
+    </div> -->
 </section>

@@ -12,10 +12,7 @@
         <div class="containerLogin mt-5">
             <div class="col-left">
                 <div class="login-text">
-                    <h2>Cambio de contraseña</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget eros dapibus, ultricies tellus vitae, consectetur tortor. Etiam rutrum placerat
-                    </p>
+                    
                     <?php
                     if ($this->session->flashdata('error')) {
                     ?>
@@ -32,16 +29,27 @@
             <div class="col-right">
 
                 <div class="login-form">
-                    <h2 class="ml-4">Cambiar la contraseña</h2>
+                    <h2 class="ml-4">Actualizar cuenta</h2> 
+                    <small class="ml-4">Completa los campos que quieras actualizar</small>
                     <form method="post" action="<?php echo base_url('updatePassword'); ?>">
+
                         <p>
-                            Campos requeridos (*)
+                            <input type="text" name="first_name" placeholder="Primer nombre" >
                         </p>
                         <p>
-                            <input type="password" name="password" placeholder="Contraseña*" required>
+                            <input type="text" name="last_name" placeholder="Apellido" >
                         </p>
                         <p>
-                            <input type="password" name="password_confirm" placeholder="Repite la contraseña*" required>
+                            <input type="number" maxlength="9" name="phone" placeholder="Teléfono" >
+                        </p>
+                        <p>
+                            <input type="email" name="email" placeholder="email" >
+                        </p>
+                        <p>
+                            <input type="password" name="password" placeholder="Contraseña" >
+                        </p>
+                        <p>
+                            <input type="password" name="password_confirm" placeholder="Repite la contraseña" >
                         </p>
                         <p>
                             <input class="btn" type="submit" value="Cambiar" />
